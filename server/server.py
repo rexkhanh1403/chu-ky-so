@@ -7,7 +7,7 @@ from cryptography.hazmat.primitives.serialization import load_pem_public_key
 HOST = "127.0.0.1"
 PORT = 9999
 
-with open("backend/keys/public.pem", "rb") as f:
+with open("keys/public_key.pem", "rb") as f:
     pub_key = load_pem_public_key(f.read())
 
 os.makedirs("downloads", exist_ok=True)

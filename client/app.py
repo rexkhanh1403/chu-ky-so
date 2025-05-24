@@ -10,7 +10,7 @@ app.secret_key = "new_secret"
 SERVER_IP = "127.0.0.1"
 SERVER_PORT = 9999
 
-with open("backend/keys/private.pem", "rb") as key_file:
+with open("keys/private_key.pem", "rb") as key_file:
     secret_key = load_pem_private_key(key_file.read(), password=None)
 
 @app.route("/", methods=["GET", "POST"])
