@@ -67,4 +67,80 @@ Python 3.7 trở lên
 pip
 
 Cài thư viện cần thiết:
-# pip install Flask Flask-SocketIO cryptography Werkzeug
+```
+pip install Flask Flask-SocketIO cryptography Werkzeug
+
+```
+🎮 Hướng dẫn sử dụng
+📁 Chuẩn bị:
+Đảm bảo có các thư mục sau cùng cấp với server.py:
+
+keys/: chứa public_key.pem
+
+received_files/: nơi lưu file nhận được
+
+▶️ Khởi động:
+# 1. Mở 2 cửa sổ Terminal:
+
+Server (chạy trước):
+```
+cd server
+python server.py
+```
+Client (giao diện web):
+```
+cd client
+python app.py
+```
+# 2. Truy cập trình duyệt:
+```
+http://127.0.0.1:5000/
+```
+# 3. Tại giao diện web:
+
+Nhập IP + port server (mặc định: 127.0.0.1:8889)
+
+Chọn file cần gửi
+
+Nhấn Send File
+
+# 4. Xem nhật ký log hiển thị:
+
+Gửi file thành công
+
+Kết quả xác minh: VALID hoặc INVALID
+
+🔐 Bảo mật
+Sử dụng thuật toán RSA 2048-bit
+
+SHA-256 đảm bảo băm không trùng lặp
+
+Chữ ký số đảm bảo:
+
+Dữ liệu không bị thay đổi
+
+Người gửi được xác thực
+
+Server chỉ lưu file nếu xác minh hợp lệ
+
+🧰 Công nghệ sử dụng
+🔧 Backend:
+Python
+
+Flask (giao diện web)
+
+Flask-SocketIO (giao tiếp real-time)
+
+cryptography (tạo, ký và xác minh RSA)
+
+socket, threading (server TCP đa luồng)
+
+🎨 Frontend:
+HTML5
+
+JavaScript
+
+Bootstrap (nếu dùng)
+
+📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
